@@ -6,6 +6,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
     <title>Map</title>
+    <link rel="shortcut icon" type="image/png" href="./icon.ico"/>
     <link rel='stylesheet' href='https://openlayers.org/en/v4.6.5/css/ol.css' type='text/css'>
     <script src='https://openlayers.org/en/v4.6.5/build/ol.js'></script>
     <script src='https://code.jquery.com/jquery-1.12.3.min.js' type='text/javascript'></script>
@@ -29,26 +30,26 @@
                     <span onclick="showLevelZoom()">Chế độ xem:</span>
                     <select id='selectArea'>
                         <option value='0'>Toàn Quốc</option>
-                        <option value='1'>Các tỉnh/thành phố</option>
-                        <option value='2'>Các quận/Huyện</option>
-                        <option value='3'>Các phường/xã</option>
+                        <option value='1' selected>Các tỉnh/thành phố</option>
+                        <!-- <option value='2'>Các quận/Huyện</option>
+                        <option value='3'>Các phường/xã</option> -->
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type='checkbox' id='viewRoad' name='mapRoads' class='selectOption' />
+                    <input type='checkbox' id='viewRoad' name='mapRoads' class='selectOption' checked/>
                     <label for='viewRoad'>Xem đường</label><br>
-                    <input type='checkbox' id='viewBuilding' name='mapBuilding' class='selectOption' />
-                    <label for='viewBuilding'>Xem các tòa nhà</label><br>
-                    <input type='checkbox' id='viewRailway' name='mapRailWays' class='selectOption' />
-                    <label for='viewRailway'>Xem đường săt</label><br>
-                    <input type='checkbox' id='viewRiver' name='mapRiver' class='selectOption' />
-                    <label for='viewRiver'>Xem đường thủy</label><br>
-                    <input type='checkbox' id='viewPoint' name='mapPoints' class='selectOption' />
+                    <!-- <input type='checkbox' id='viewBuilding' name='mapBuilding' class='selectOption' />
+                        <label for='viewBuilding'>Xem các tòa nhà</label><br>
+                        <input type='checkbox' id='viewRailway' name='mapRailWays' class='selectOption' />
+                        <label for='viewRailway'>Xem đường săt</label><br>
+                        <input type='checkbox' id='viewRiver' name='mapRiver' class='selectOption' />
+                        <label for='viewRiver'>Xem đường thủy</label><br> -->
+                    <input type='checkbox' id='viewPoint' name='mapPoints' class='selectOption' checked/>
                     <label for='viewPoint'>Xem các điểm</label><br>
-                    <input type='checkbox' id='viewNatual' name='mapNatural' class='selectOption' />
-                    <label for='viewNatual'>Xem thiên nhiên</label><br>
+                    <!-- <input type='checkbox' id='viewNatual' name='mapNatural' class='selectOption' />
+                    <label for='viewNatual'>Xem thiên nhiên</label><br> -->
                 </td>
             </tr>
             <tr>
@@ -61,7 +62,24 @@
                     <button id="btnReset">Xóa đường</button>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    Tọa độ: <span id="xText"></span>:<span id="yText"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Zoom: </span> <span id="zoomText"></span>
+                </td>
+            </tr>
         </table>
+    </div>
+
+    <div id='header'>
+        <input type="text" name="search" placeholder="Search..." id="input_search">
+        <div id="result_search">
+
+        </div>
     </div>
 </body>
 

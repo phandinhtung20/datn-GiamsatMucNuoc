@@ -1,0 +1,1179 @@
+Lable
+<FeatureTypeStyle>
+     <Rule>
+       <PointSymbolizer>
+         <Graphic>
+           <Mark>
+             <WellKnownName>circle</WellKnownName>
+             <Fill>
+               <CssParameter name="fill">#FF0000</CssParameter>
+             </Fill>
+           </Mark>
+           <Size>6</Size>
+         </Graphic>
+       </PointSymbolizer>
+       <TextSymbolizer>
+         <Label>
+           <ogc:PropertyName>name</ogc:PropertyName>
+         </Label>
+         <Fill>
+           <CssParameter name="fill">#000000</CssParameter>
+         </Fill>
+       </TextSymbolizer>
+     </Rule>
+   </FeatureTypeStyle>
+
+
+
+labelQuan
+/* @title cyan polygon */
+* {
+    stroke: #000000;
+    stroke-width: 0.5;
+    fill: #f4cccc;
+}
+
+* {
+  stroke-width: 0.2;
+  label: [name_2];
+  label-anchor: 0.5 0.5;
+  font-family: "Times New Roman";
+  font-fill: black;
+  font-style: normal;
+  font-size: 14;
+  partials: true;
+}
+
+
+
+labelQuanSLD
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0" 
+    xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+    xmlns="http://www.opengis.net/sld" 
+    xmlns:ogc="http://www.opengis.net/ogc" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NamedLayer>
+    <Name>Label halo</Name>
+    <UserStyle>
+      <Title>SLD Cook Book: Label halo</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#f4cccc</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.5</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>      
+        </Rule>
+        <Rule>
+          <MaxScaleDenominator>20</MaxScaleDenominator>
+          <TextSymbolizer>
+            <Label>
+              <ogc:PropertyName>name_2</ogc:PropertyName>
+            </Label>
+            <Font>
+              <CssParameter name="font-family">Arial</CssParameter>
+              <CssParameter name="font-size">11</CssParameter>
+              <CssParameter name="font-style">normal</CssParameter>
+              <CssParameter name="font-weight">bold</CssParameter>
+            </Font>
+            <Halo>
+              <Radius>1</Radius>
+              <Fill>
+                <CssParameter name="fill">#FFFFFF</CssParameter>
+              </Fill>
+            </Halo>
+            <VendorOption name="partials">true</VendorOption>
+           <LabelPlacement>
+             <PointPlacement>
+               <AnchorPoint>
+                 <AnchorPointX>0.5</AnchorPointX>
+                 <AnchorPointY>0.5</AnchorPointY>
+               </AnchorPoint>
+             </PointPlacement>
+           </LabelPlacement>
+          </TextSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+
+
+
+
+
+labelQuocGia
+/* @title cyan polygon */
+* {
+    stroke: #000000;
+    stroke-width: 0.5;
+    fill: #fff2cc;
+}
+
+* {
+  stroke-width: 0.2;
+  label: [name_0];
+  label-anchor: 0.5 0.5;
+  font-family: "Times New Roman";
+  font-fill: black;
+  font-style: normal;
+  font-size: 14;
+}
+
+
+
+
+
+labelQuocGiaSLD
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0" 
+    xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+    xmlns="http://www.opengis.net/sld" 
+    xmlns:ogc="http://www.opengis.net/ogc" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NamedLayer>
+    <Name>Label halo</Name>
+    <UserStyle>
+      <Title>SLD Cook Book: Label halo</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#d9ead3</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.5</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>        
+          <TextSymbolizer>
+            <Label>
+              <ogc:PropertyName>name_0</ogc:PropertyName>
+            </Label>
+            <Halo>
+              <Radius>1</Radius>
+              <Fill>
+                <CssParameter name="fill">#FFFFFF</CssParameter>
+              </Fill>
+            </Halo>
+			<Font>
+				<CssParameter name="font-family">Times New Roman</CssParameter>
+				<CssParameter name="font-size">14</CssParameter>
+				<CssParameter name="font-style">normal</CssParameter>
+				<CssParameter name="font-weight">bold</CssParameter>
+			</Font>
+			<LabelPlacement>
+				<PointPlacement>
+					 <AnchorPoint>
+					   <AnchorPointX>0.5</AnchorPointX>
+					   <AnchorPointY>0.5</AnchorPointY>
+					 </AnchorPoint>
+				</PointPlacement>
+			</LabelPlacement>
+            <VendorOption name="partials">true</VendorOption>
+			 <Fill>
+			   <CssParameter name="fill">#000000</CssParameter>
+			 </Fill>
+          </TextSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+////////////////// wrong
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.0.0" 
+                       xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+                       xmlns="http://www.opengis.net/sld" 
+                       xmlns:ogc="http://www.opengis.net/ogc" 
+                       xmlns:xlink="http://www.w3.org/1999/xlink" 
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- a Named Layer is the basic building block of an SLD document -->
+  <NamedLayer>
+    <Name>default_polygon</Name>
+    <UserStyle>
+      <!-- Styles can have names, titles and abstracts -->
+      <Title>Default Polygon</Title>
+      <Abstract>A sample style that draws a polygon</Abstract>
+      <!-- FeatureTypeStyles describe how to render different features -->
+      <!-- A FeatureTypeStyle for rendering polygons -->
+      <FeatureTypeStyle>
+        <Rule>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#38761d</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#FFFFFF</CssParameter>
+              <CssParameter name="stroke-width">1</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+          <TextSymbolizer>
+            <Geometry>
+              <ogc:Function name="centroid">
+                <ogc:PropertyName>geom</ogc:PropertyName>
+              </ogc:Function>
+            </Geometry>                    
+            <Label>
+              <ogc:PropertyName>label</ogc:PropertyName>
+            </Label>
+            <Font>
+              <CssParameter name="font-family">Arial</CssParameter>
+              <CssParameter name="font-weight">Bold</CssParameter>
+              <CssParameter name="font-size">14</CssParameter>
+            </Font>
+            <LabelPlacement>
+              <PointPlacement>
+                <AnchorPoint>
+                  <AnchorPointX>0.5</AnchorPointX>
+                  <AnchorPointY>0.5</AnchorPointY>
+                </AnchorPoint>
+                <Displacement>
+                  <DisplacementX>0</DisplacementX>
+                  <DisplacementY>-15</DisplacementY>
+                </Displacement>
+              </PointPlacement>
+            </LabelPlacement>
+            <Halo>
+              <Radius>
+                <ogc:Literal>2</ogc:Literal>
+              </Radius>
+              <Fill>
+                <CssParameter name="fill">#9F0000</CssParameter>
+              </Fill>
+            </Halo>
+            <Fill>
+              <CssParameter name="fill">#FFFFFF</CssParameter>
+            </Fill>
+          </TextSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+
+
+
+
+
+
+labelRoad
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.0.0" 
+	xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+	xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<NamedLayer> <Name> area landmarks </Name>
+    <UserStyle>
+         <FeatureTypeStyle>
+            <FeatureTypeName>Feature</FeatureTypeName>
+			<Rule>  
+	               <MinScaleDenominator>20</MinScaleDenominator>
+	    		   <LineSymbolizer>
+	    		       <Stroke>
+	    				<CssParameter name="stroke">
+	    					<ogc:Literal>#666666</ogc:Literal>
+	    				</CssParameter>
+	    				<CssParameter name="stroke-width">
+	    					<ogc:Literal>1</ogc:Literal>
+	    				</CssParameter>
+	    			</Stroke>
+	    		   </LineSymbolizer>
+            </Rule>
+
+            <Rule>	<!-- thick line drawn first-->
+				<MaxScaleDenominator>20</MaxScaleDenominator>
+              	<MinScaleDenominator>2</MinScaleDenominator>
+				<LineSymbolizer>
+					<Stroke>
+						<CssParameter name="stroke">
+							<ogc:Literal>#666666</ogc:Literal>
+						</CssParameter>
+						<CssParameter name="stroke-width">
+							<ogc:Literal>2</ogc:Literal>
+						</CssParameter>
+					</Stroke>
+				</LineSymbolizer>
+            </Rule>
+           
+            <Rule>	<!-- thick line drawn first-->
+				<MaxScaleDenominator>2</MaxScaleDenominator>
+              	<MinScaleDenominator>0.2</MinScaleDenominator>
+				<LineSymbolizer>
+					<Stroke>
+						<CssParameter name="stroke">
+							<ogc:Literal>#666666</ogc:Literal>
+						</CssParameter>
+						<CssParameter name="stroke-width">
+							<ogc:Literal>4</ogc:Literal>
+						</CssParameter>
+					</Stroke>
+				</LineSymbolizer>
+            </Rule>
+           <Rule>	<!-- thick line drawn first-->
+				<MaxScaleDenominator>0.2</MaxScaleDenominator>
+				<LineSymbolizer>
+					<Stroke>
+						<CssParameter name="stroke">
+							<ogc:Literal>#666666</ogc:Literal>
+						</CssParameter>
+						<CssParameter name="stroke-width">
+							<ogc:Literal>7</ogc:Literal>
+						</CssParameter>
+					</Stroke>
+				</LineSymbolizer>
+            </Rule>
+        </FeatureTypeStyle>
+        <FeatureTypeStyle>
+           <FeatureTypeName>Feature</FeatureTypeName>
+           <Rule>	<!-- thin line drawn second -->
+				<MaxScaleDenominator>20</MaxScaleDenominator>
+	            <LineSymbolizer>
+	    		       <Stroke>
+	    				<CssParameter name="stroke">
+	    					<ogc:Literal>#FFFFFF</ogc:Literal>
+	    				</CssParameter>
+	    				<CssParameter name="stroke-width">
+	    					<ogc:Literal>1</ogc:Literal>
+	    				</CssParameter>
+	    			</Stroke>
+				</LineSymbolizer>
+            </Rule> 
+            <!-- label -->     
+			<Rule>
+				<MaxScaleDenominator>2</MaxScaleDenominator>
+				<TextSymbolizer>
+					<Label>
+						<ogc:PropertyName>name</ogc:PropertyName>
+					</Label>
+
+					<Font>
+						<CssParameter name="font-family">Times New Roman</CssParameter>
+						<CssParameter name="font-style">Normal</CssParameter>
+						<CssParameter name="font-size">10</CssParameter>
+						<CssParameter name="font-weight">bold</CssParameter>
+					</Font>
+					
+					<LabelPlacement>
+					  <LinePlacement>
+					  </LinePlacement>
+					</LabelPlacement>
+					<Halo>
+						<Radius>
+							<ogc:Literal>5</ogc:Literal>
+						</Radius>
+						<Fill>
+							<CssParameter name="fill">#FFFFFF</CssParameter>
+							<CssParameter name="fill-opacity">1</CssParameter>				
+						</Fill>
+					</Halo>
+					
+					<Fill>
+						<CssParameter name="fill">#000000</CssParameter>
+					</Fill>
+					
+					<VendorOption name="group">true</VendorOption>
+					
+				</TextSymbolizer>
+			</Rule>
+        </FeatureTypeStyle>
+        
+    </UserStyle>
+    </NamedLayer>
+</StyledLayerDescriptor>
+
+
+
+
+
+
+labelSong
+/* @title cyan polygon */
+* {
+    stroke: #0098ff;
+    stroke-width: 0.5;
+}
+
+
+
+
+
+
+labelTỉnh
+/* @title cyan polygon */
+* {
+    stroke: #000000;
+    stroke-width: 0.5;
+    fill: #fce5cd;
+}
+
+* {
+  stroke-width: 0.2;
+  label: [name_1];
+  label-anchor: 0.5 0.5;
+  font-family: "Times New Roman";
+  font-fill: black;
+  font-style: normal;
+  font-size: 14;
+}
+
+
+
+
+
+
+
+
+
+
+labelXa
+/* @title cyan polygon */
+* {
+    stroke: #000000;
+    stroke-width: 0.5;
+    fill: #cccccc;
+}
+
+* {
+  stroke-width: 0.2;
+  label: [name_3];
+  label-anchor: 0.5 0.5;
+  font-family: "Times New Roman";
+  font-fill: black;
+  font-style: normal;
+  font-size: 14;
+}
+
+
+
+
+
+
+
+
+labelXaSLD
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0" 
+    xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+    xmlns="http://www.opengis.net/sld" 
+    xmlns:ogc="http://www.opengis.net/ogc" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NamedLayer>
+    <Name>Label halo</Name>
+    <UserStyle>
+      <Title>SLD Cook Book: Label halo</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#ead1dc</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.5</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>        
+          <TextSymbolizer>
+            <Label>
+              <ogc:PropertyName>name_3</ogc:PropertyName>
+            </Label>
+            <Halo>
+              <Radius>1</Radius>
+              <Fill>
+                <CssParameter name="fill">#FFFFFF</CssParameter>
+              </Fill>
+            </Halo>
+			<Font>
+				<CssParameter name="font-family">Times New Roman</CssParameter>
+				<CssParameter name="font-size">12</CssParameter>
+				<CssParameter name="font-style">normal</CssParameter>
+				<CssParameter name="font-weight">bold</CssParameter>
+			</Font>
+			<LabelPlacement>
+				<PointPlacement>
+					 <AnchorPoint>
+					   <AnchorPointX>0.5</AnchorPointX>
+					   <AnchorPointY>0.5</AnchorPointY>
+					 </AnchorPoint>
+				</PointPlacement>
+			</LabelPlacement>
+            <VendorOption name="partials">true</VendorOption>
+			 <Fill>
+			   <CssParameter name="fill">#000000</CssParameter>
+			 </Fill>
+          </TextSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+
+
+
+
+
+
+
+lineFinding
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.0.0" 
+ xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+ xmlns="http://www.opengis.net/sld" 
+ xmlns:ogc="http://www.opengis.net/ogc" 
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- a Named Layer is the basic building block of an SLD document -->
+  <NamedLayer>
+    <Name>default_line</Name>
+    <UserStyle>
+    <!-- Styles can have names, titles and abstracts -->
+      <Title>Default Line</Title>
+      <Abstract>A sample style that draws a line</Abstract>
+      <!-- FeatureTypeStyles describe how to render different features -->
+      <!-- A FeatureTypeStyle for rendering lines -->
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>rule1</Name>
+          <Title>Blue Line</Title>
+          <Abstract>A solid blue line with a 1 pixel width</Abstract>
+          <LineSymbolizer>
+            <Stroke>
+              <CssParameter name="stroke">#ff0000</CssParameter>
+              <CssParameter name="width">2</CssParameter>
+            </Stroke>
+          </LineSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+
+
+
+
+
+
+
+
+
+
+
+
+
+place
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.0.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd">
+  <NamedLayer>
+    <Name>poi</Name>
+    <UserStyle>
+      <Name>poi</Name>
+      <Title>Points of interest</Title>
+      <Abstract>Manhattan points of interest</Abstract>
+      <FeatureTypeStyle>
+        <Rule>
+          <MaxScaleDenominator>8</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF0000</CssParameter>
+                  <CssParameter name="fill-opacity">1.0</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>11</Size>
+            </Graphic>
+          </PointSymbolizer>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#EDE513</CssParameter>
+                  <CssParameter name="fill-opacity">1.0</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>7</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+        <Rule>
+          <MinScaleDenominator>8</MinScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF0000</CssParameter>
+                  <CssParameter name="fill-opacity">1.0</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>5</Size>
+            </Graphic>
+          </PointSymbolizer>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#EDE513</CssParameter>
+                  <CssParameter name="fill-opacity">1.0</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>4</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+        <Rule>
+          <MaxScaleDenominator>8</MaxScaleDenominator>
+          <TextSymbolizer>
+            <Label>
+              <ogc:PropertyName>name</ogc:PropertyName>
+            </Label>
+            <Font>
+              <CssParameter name="font-family">Arial</CssParameter>
+              <CssParameter name="font-weight">Bold</CssParameter>
+              <CssParameter name="font-size">14</CssParameter>
+            </Font>
+            <LabelPlacement>
+              <PointPlacement>
+                <AnchorPoint>
+                  <AnchorPointX>0.5</AnchorPointX>
+                  <AnchorPointY>0.5</AnchorPointY>
+                </AnchorPoint>
+                <Displacement>
+                  <DisplacementX>0</DisplacementX>
+                  <DisplacementY>-15</DisplacementY>
+                </Displacement>
+              </PointPlacement>
+            </LabelPlacement>
+            <Halo>
+              <Radius>
+                <ogc:Literal>2</ogc:Literal>
+              </Radius>
+              <Fill>
+                <CssParameter name="fill">#FFFFFF</CssParameter>
+              </Fill>
+            </Halo>
+            <Fill>
+              <CssParameter name="fill">#000000</CssParameter>
+            </Fill>
+          </TextSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+
+
+
+
+
+
+
+railroad
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0" 
+    xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+    xmlns="http://www.opengis.net/sld" 
+    xmlns:ogc="http://www.opengis.net/ogc" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NamedLayer>
+    <Name>Railroad (hatching)</Name>
+    <UserStyle>
+      <Title>SLD Cook Book: Railroad (hatching)</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <LineSymbolizer>
+            <Stroke>
+              <CssParameter name="stroke">#333333</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
+            </Stroke>
+          </LineSymbolizer> 
+         <LineSymbolizer>
+            <Stroke>
+              <GraphicStroke>
+                <Graphic>
+                  <Mark>
+                    <WellKnownName>shape://vertline</WellKnownName>
+                    <Stroke>
+                      <CssParameter name="stroke">#333333</CssParameter>
+                      <CssParameter name="stroke-width">1</CssParameter>
+                    </Stroke>
+                  </Mark>
+                  <Size>12</Size>
+                </Graphic>
+              </GraphicStroke>
+            </Stroke>
+          </LineSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+
+
+
+
+
+
+
+
+
+
+
+randomColor
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0"
+xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"
+xmlns="http://www.opengis.net/sld"
+xmlns:ogc="http://www.opengis.net/ogc"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <NamedLayer>
+        <Name>default_polygon</Name>
+        <UserStyle>
+            <Title>Default Polygon</Title>
+            <Abstract>A sample style that draws a polygon</Abstract>
+            <FeatureTypeStyle>
+                <Rule>
+                    <Name>rule1</Name>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#66FF66</CssParameter>
+                        </Fill>
+                        <Stroke>
+                            <CssParameter name="stroke">#000000</CssParameter>
+                            <CssParameter name="stroke-width">1</CssParameter>
+                        </Stroke>
+                        <VendorOption name="partials">true</VendorOption>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>0</Name>
+                    <Title>div 1</Title>
+                    <ogc:Filter>
+                        <ogc:PropertyIsEqualTo>
+                            <ogc:sub>
+                                <ogc:PropertyName>gid</ogc:PropertyName>
+                                <ogc:mul>
+                                <ogc:Function name="floor">
+                                    <ogc:Div>
+                                    <ogc:PropertyName>gid</ogc:PropertyName>
+                                    <ogc:Literal>10</ogc:Literal>
+                                    </ogc:Div>
+                                </ogc:Function>
+                                <ogc:Literal>10</ogc:Literal>
+                                </ogc:mul>
+                            </ogc:sub>
+                            <ogc:Literal>0</ogc:Literal>
+                        </ogc:PropertyIsEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#0c343d</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>1</Name>
+                    <Title>div 1</Title>
+                    <ogc:Filter>
+                        <ogc:PropertyIsEqualTo>
+                            <ogc:sub>
+                                <ogc:PropertyName>gid</ogc:PropertyName>
+                                <ogc:mul>
+                                <ogc:Function name="floor">
+                                    <ogc:Div>
+                                    <ogc:PropertyName>gid</ogc:PropertyName>
+                                    <ogc:Literal>10</ogc:Literal>
+                                    </ogc:Div>
+                                </ogc:Function>
+                                <ogc:Literal>10</ogc:Literal>
+                                </ogc:mul>
+                            </ogc:sub>
+                            <ogc:Literal>1</ogc:Literal>
+                        </ogc:PropertyIsEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#20124d</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>2</Name>
+                    <Title>div 1</Title>
+                    <ogc:Filter>
+                        <ogc:PropertyIsEqualTo>
+                            <ogc:sub>
+                                <ogc:PropertyName>gid</ogc:PropertyName>
+                                <ogc:mul>
+                                <ogc:Function name="floor">
+                                    <ogc:Div>
+                                    <ogc:PropertyName>gid</ogc:PropertyName>
+                                    <ogc:Literal>10</ogc:Literal>
+                                    </ogc:Div>
+                                </ogc:Function>
+                                <ogc:Literal>10</ogc:Literal>
+                                </ogc:mul>
+                            </ogc:sub>
+                            <ogc:Literal>2</ogc:Literal>
+                        </ogc:PropertyIsEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#38761d</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>3</Name>
+                    <Title>div 1</Title>
+                    <ogc:Filter>
+                        <ogc:PropertyIsEqualTo>
+                            <ogc:sub>
+                                <ogc:PropertyName>gid</ogc:PropertyName>
+                                <ogc:mul>
+                                <ogc:Function name="floor">
+                                    <ogc:Div>
+                                    <ogc:PropertyName>gid</ogc:PropertyName>
+                                    <ogc:Literal>10</ogc:Literal>
+                                    </ogc:Div>
+                                </ogc:Function>
+                                <ogc:Literal>10</ogc:Literal>
+                                </ogc:mul>
+                            </ogc:sub>
+                            <ogc:Literal>3</ogc:Literal>
+                        </ogc:PropertyIsEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#cc0000</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>4</Name>
+                    <Title>div 1</Title>
+                    <ogc:Filter>
+                        <ogc:PropertyIsEqualTo>
+                            <ogc:sub>
+                                <ogc:PropertyName>gid</ogc:PropertyName>
+                                <ogc:mul>
+                                <ogc:Function name="floor">
+                                    <ogc:Div>
+                                    <ogc:PropertyName>gid</ogc:PropertyName>
+                                    <ogc:Literal>10</ogc:Literal>
+                                    </ogc:Div>
+                                </ogc:Function>
+                                <ogc:Literal>10</ogc:Literal>
+                                </ogc:mul>
+                            </ogc:sub>
+                            <ogc:Literal>4</ogc:Literal>
+                        </ogc:PropertyIsEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#6fa8dc</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>5</Name>
+                    <Title>div 1</Title>
+                    <ogc:Filter>
+                        <ogc:PropertyIsEqualTo>
+                            <ogc:sub>
+                                <ogc:PropertyName>gid</ogc:PropertyName>
+                                <ogc:mul>
+                                <ogc:Function name="floor">
+                                    <ogc:Div>
+                                    <ogc:PropertyName>gid</ogc:PropertyName>
+                                    <ogc:Literal>10</ogc:Literal>
+                                    </ogc:Div>
+                                </ogc:Function>
+                                <ogc:Literal>10</ogc:Literal>
+                                </ogc:mul>
+                            </ogc:sub>
+                            <ogc:Literal>5</ogc:Literal>
+                        </ogc:PropertyIsEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#660000</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>6</Name>
+                    <Title>div 1</Title>
+                    <ogc:Filter>
+                        <ogc:PropertyIsEqualTo>
+                            <ogc:sub>
+                                <ogc:PropertyName>gid</ogc:PropertyName>
+                                <ogc:mul>
+                                <ogc:Function name="floor">
+                                    <ogc:Div>
+                                    <ogc:PropertyName>gid</ogc:PropertyName>
+                                    <ogc:Literal>10</ogc:Literal>
+                                    </ogc:Div>
+                                </ogc:Function>
+                                <ogc:Literal>10</ogc:Literal>
+                                </ogc:mul>
+                            </ogc:sub>
+                            <ogc:Literal>6</ogc:Literal>
+                        </ogc:PropertyIsEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#ffd966</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>7</Name>
+                    <Title>div 1</Title>
+                    <ogc:Filter>
+                        <ogc:PropertyIsEqualTo>
+                            <ogc:sub>
+                                <ogc:PropertyName>gid</ogc:PropertyName>
+                                <ogc:mul>
+                                <ogc:Function name="floor">
+                                    <ogc:Div>
+                                    <ogc:PropertyName>gid</ogc:PropertyName>
+                                    <ogc:Literal>10</ogc:Literal>
+                                    </ogc:Div>
+                                </ogc:Function>
+                                <ogc:Literal>10</ogc:Literal>
+                                </ogc:mul>
+                            </ogc:sub>
+                            <ogc:Literal>7</ogc:Literal>
+                        </ogc:PropertyIsEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#9900ff</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>8</Name>
+                    <Title>div 1</Title>
+                    <ogc:Filter>
+                        <ogc:PropertyIsEqualTo>
+                            <ogc:sub>
+                                <ogc:PropertyName>gid</ogc:PropertyName>
+                                <ogc:mul>
+                                <ogc:Function name="floor">
+                                    <ogc:Div>
+                                    <ogc:PropertyName>gid</ogc:PropertyName>
+                                    <ogc:Literal>10</ogc:Literal>
+                                    </ogc:Div>
+                                </ogc:Function>
+                                <ogc:Literal>10</ogc:Literal>
+                                </ogc:mul>
+                            </ogc:sub>
+                            <ogc:Literal>2</ogc:Literal>
+                        </ogc:PropertyIsEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#7f6000</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>9</Name>
+                    <Title>div 1</Title>
+                    <ogc:Filter>
+                        <ogc:PropertyIsEqualTo>
+                            <ogc:sub>
+                                <ogc:PropertyName>gid</ogc:PropertyName>
+                                <ogc:mul>
+                                <ogc:Function name="floor">
+                                    <ogc:Div>
+                                    <ogc:PropertyName>gid</ogc:PropertyName>
+                                    <ogc:Literal>10</ogc:Literal>
+                                    </ogc:Div>
+                                </ogc:Function>
+                                <ogc:Literal>10</ogc:Literal>
+                                </ogc:mul>
+                            </ogc:sub>
+                            <ogc:Literal>9</ogc:Literal>
+                        </ogc:PropertyIsEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#00ffff</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>rule2</Name>
+                    <TextSymbolizer>
+                        <Label>
+                            <ogc:PropertyName>name_1</ogc:PropertyName>
+                        </Label>
+                        <Font>
+                            <CssParameter name="font-family">Arial</CssParameter>
+                            <CssParameter name="font-size">16</CssParameter>
+                            <CssParameter name="font-style">normal</CssParameter>
+                            <CssParameter name="font-weight">bold</CssParameter>
+                        </Font>
+                        <LabelPlacement>
+                            <PointPlacement>
+                                <AnchorPoint>
+                                    <AnchorPointX>0.5</AnchorPointX>
+                                    <AnchorPointY>0.5</AnchorPointY>
+                                </AnchorPoint>
+                            </PointPlacement>
+                        </LabelPlacement>
+                        <VendorOption name="partials">true</VendorOption>
+                        <Fill>
+                            <CssParameter name="fill">#000000</CssParameter>
+                        </Fill>
+                        <Halo>
+                            <Radius>1</Radius>
+                            <Fill>
+                                <CssParameter name="fill">#FFFFFF</CssParameter>
+                            </Fill>
+                        </Halo>
+                    </TextSymbolizer>
+                </Rule>
+            </FeatureTypeStyle>
+        </UserStyle>
+    </NamedLayer>
+</StyledLayerDescriptor>
+
+
+////////////////////////wrong
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.0.0" 
+                       xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+                       xmlns="http://www.opengis.net/sld" 
+                       xmlns:ogc="http://www.opengis.net/ogc" 
+                       xmlns:xlink="http://www.w3.org/1999/xlink" 
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- a Named Layer is the basic building block of an SLD document -->
+  <NamedLayer>
+    <Name>default_polygon</Name>
+    <UserStyle>
+      <!-- Styles can have names, titles and abstracts -->
+      <Title>Default Polygon</Title>
+      <Abstract>A sample style that draws a polygon</Abstract>
+      <!-- FeatureTypeStyles describe how to render different features -->
+      <!-- A FeatureTypeStyle for rendering polygons -->
+      <FeatureTypeStyle>
+        <Rule>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#741b47</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#FFFFFF</CssParameter>
+              <CssParameter name="stroke-width">1</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+          <TextSymbolizer>
+            <Geometry>
+              <ogc:Function name="centroid">
+                <ogc:PropertyName>geom</ogc:PropertyName>
+              </ogc:Function>
+            </Geometry>                    
+            <Label>
+              <ogc:PropertyName>name_1</ogc:PropertyName>
+            </Label>
+            <Font>
+              <CssParameter name="font-family">Arial</CssParameter>
+              <CssParameter name="font-weight">Bold</CssParameter>
+              <CssParameter name="font-size">14</CssParameter>
+            </Font>
+            <LabelPlacement>
+              <PointPlacement>
+                <AnchorPoint>
+                  <AnchorPointX>0.5</AnchorPointX>
+                  <AnchorPointY>0.5</AnchorPointY>
+                </AnchorPoint>
+                <Displacement>
+                  <DisplacementX>0</DisplacementX>
+                  <DisplacementY>-15</DisplacementY>
+                </Displacement>
+              </PointPlacement>
+            </LabelPlacement>
+            <Halo>
+              <Radius>
+                <ogc:Literal>2</ogc:Literal>
+              </Radius>
+              <Fill>
+                <CssParameter name="fill">#ffffff</CssParameter>
+              </Fill>
+            </Halo>
+            <Fill>
+              <CssParameter name="fill">#0c343d</CssParameter>
+            </Fill>
+          </TextSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+
+
+
+
+shortest
+select seq, id, the_geom, name, now
+from (
+    select seq, lag(node) over (order by seq) as bef,
+           node as now
+    from pgr_dijkstra('select id, source, target, distance as cost, (CASE WHEN directed THEN -1 ELSE distance END) as reverse_cost from edges_noded_1',%a%,%b%,true) as di
+) t
+JOIN public.edges_noded_1 e
+ON ((now = e.source and bef = e.target) or (bef = e.source and now = e.target) or (now  = e.source and now = e.target))
+
+
+
+
+shortestLine
+select seq, id, the_geom, name, now
+from (
+    select seq, lag(node) over (order by seq) as bef,
+           node as now
+    from pgr_dijkstra('select id, source, target, distance as cost, (CASE WHEN directed THEN -1 ELSE distance END) as reverse_cost from edges_noded_1',%a%,%b%,true) as di
+) t
+JOIN public.edges_noded_1 e
+ON ((now = e.source and bef = e.target) or (bef = e.source and now = e.target) or (now  = e.source and now = e.target))
+
+
+
+
+routing2
+select seq, id, the_geom, name, now
+from (
+    select seq, lag(node) over (order by seq) as bef,
+           node as now
+    from pgr_dijkstra('select id, source, target, distance as cost, (CASE WHEN directed THEN -1 ELSE distance END) as reverse_cost from edges_noded_1',%x1%, %x2%, true) as di
+) t
+JOIN public.edges_noded_1 e
+ON ((now = e.source and bef = e.target) or (bef = e.source and now = e.target))
+
+
+
+
+
+routing
+SELECT (route.geom) 
+FROM (SELECT geom FROM pgr_fromAtoB('edges_noded_1', %x1%, %y1%, %x2%, %y2%) ORDER BY seq) AS route
