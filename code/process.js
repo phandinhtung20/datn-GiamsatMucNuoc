@@ -1,16 +1,20 @@
 var map = null;
 var result = null;
+var resultSearch = null;
 
 $('#document').ready(function () {
-    var resultSearch = null;
+    var currentCoordinateContext = null;
+    var currentSensorSelect = null;
     /**
     * Elements that make up the popup.
     */
-    var container = document.getElementById('popup');
-    var closer = document.getElementById('popup-closer');
+    const container = document.getElementById('popup');
+    const contextMenu = document.getElementById('contextmenu');
+    const closer = document.getElementById('popup-closer');
     /**
     * Create an overlay to anchor the popup to the map.
     */
+    
     var overlay = new ol.Overlay(({
         element: container,
         autoPan: true,
@@ -18,17 +22,21 @@ $('#document').ready(function () {
             duration: 250
         }
     }));
-    /**
-    * Add a click handler to hide the popup.
-    * @return {boolean} Don't follow the href.
-    */
+    var overlayContextMenu = new ol.Overlay(({
+        element: contextMenu,
+        autoPan: true,
+        autoPanAnimation: {
+            duration: 250
+        }
+    }));
+
     closer.onclick = function () {
         overlay.setPosition(undefined);
         closer.blur();
         return false;
     };
 
-    const listAreaMap = [VietNamMap, VietNamProvince/*, cacQuan, cacPhuong*/];
+    const listAreaMap = [VietNamMap, VietNamProvince];
     var projection = new ol.proj.Projection({
         code: 'EPSG:4326',
         units: 'm',
@@ -43,10 +51,10 @@ $('#document').ready(function () {
         extent: [101.77443, 8.24221, 109.50172, 24.00141]
     });
     
-    map = new ol.Map({
+    var map = new ol.Map({
         target: 'map',
         layers: [...listAreaMap, ...listMapOptions],
-        overlays: [overlay],
+        overlays: [overlay, overlayContextMenu],
         loadTilesWhileAnimating: true,
         view: viewSetup
     });
@@ -79,11 +87,9 @@ $('#document').ready(function () {
     });
     map.addLayer(vectorLayer);
 
-    //map.getView().fitExtent(bounds, map.getSize());
     var bounds = [108.04029968008399, 16.030824314802885, 108.2267046123743, 16.14266727375098];
     map.getView().fit(bounds, map.getSize());
 
-    // cacPhuong.setVisible(false); cacQuan.setVisible(false);
     VietNamProvince.setVisible(true);
     VietNamMap.setVisible(false);
 
@@ -92,17 +98,7 @@ $('#document').ready(function () {
 
     // Map event
     map.on('singleclick', function (evt) {
-        if (startPoint.getGeometry() == null) {
-            // First click.
-            startPoint.setGeometry(new ol.geom.Point(evt.coordinate));
-            $("#txtPoint1").val(evt.coordinate);
-            getNode(evt.coordinate, true)
-        } else if (destPoint.getGeometry() == null) {
-            // Second click.
-            destPoint.setGeometry(new ol.geom.Point(evt.coordinate));
-            $("#txtPoint2").val(evt.coordinate);
-            getNode(evt.coordinate, false)
-        }
+        overlayContextMenu.setPosition(undefined);
     });
 
     map.on('moveend', function(evt) {
@@ -113,7 +109,56 @@ $('#document').ready(function () {
         $('#yText').text(coor[1].toFixed(5));
     });
 
+    // Right click handler
+    map.getViewport().addEventListener('contextmenu', function (evt) {
+        evt.preventDefault();
+        currentCoordinateContext = map.getEventCoordinate(evt)
+        overlayContextMenu.setPosition(currentCoordinateContext);
+
+        if (listMapOptions[4].get('visible')) {
+            setButtonRegister(true);
+            var view = map.getView();
+            var viewResolution = view.getResolution();
+            var source = listMapOptions[4].getSource();
+            var url = source.getGetFeatureInfoUrl(
+              currentCoordinateContext, viewResolution, view.getProjection(),
+              {'INFO_FORMAT': 'application/json', 'FEATURE_COUNT': 50});
+            if (url) {
+                $.ajax({
+                    url: url,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (n) {
+                        currentSensorSelect = n;
+                        if (n && n.features && n.features[0] && n.features[0].id &&
+                            n.features[0].properties  && n.features[0].properties.type === 1) {
+                            setButtonRegister(false, false);
+                        } else {
+                            setButtonRegister(false, true);
+                        }
+                    }
+                });
+            }
+        } else {
+            setButtonRegister(false, true);
+        }
+    });
+
     // Html element event
+    $("#btnFindFrom").click(function () {
+        overlayContextMenu.setPosition(undefined);
+        startPoint.setGeometry(new ol.geom.Point(currentCoordinateContext));
+        $("#txtPoint1").val(currentCoordinateContext);
+        getNodeRouting(currentCoordinateContext, true)
+    });
+
+    $("#btnFindTo").click(function () {
+        overlayContextMenu.setPosition(undefined);
+        destPoint.setGeometry(new ol.geom.Point(currentCoordinateContext));
+        $("#txtPoint2").val(currentCoordinateContext);
+        getNodeRouting(currentCoordinateContext, false)
+    });
+
     $("#btnSolve").click(function () {
         if (!(nodeBegin && nodeEnd)) {
             alert("Vui lòng chọn điểm đi và đến trước.")
@@ -168,11 +213,9 @@ $('#document').ready(function () {
         const indexSelected = listMapProps.findIndex((item) => {
             return item.name === event.target.name;
         });
-        console.log(indexSelected);
         if (indexSelected >= 0) {
             listMapOptions[indexSelected].setVisible(event.target.checked);
         }
-        console.log(event.target.checked);
     });
 
     $('#search_button').click(()=>{
@@ -187,7 +230,45 @@ $('#document').ready(function () {
         }
     });
 
-    var getNode = (coordinate, isFirst) => {
+    $('#btnRegister').click(() => {
+        let email = prompt('Nhập email muốn đăng ký', "tungtungg@sv.dut");
+
+        if (email != null) {
+            if (emailRegex.test(email)) {
+                registerLocation(email);
+            } else {
+                alert('Email không hợp lệ');
+            }
+        }
+    });
+
+    $('#dashboard').click(() => {
+        // show dashboard currentSensorSelect.features[0].id
+        openForm();
+    });
+
+    $('#popup-dashboard-closer').click(() => {
+        closeForm();
+    });
+
+    var getNodeRouting = (coordinate, isFirst) => {
+        $.ajax({
+            url: 'http://localhost:8080/geoserver/wfs?SERVICE=WFS&version=1.0.0&REQUEST=GetFeature&typeName=mapVN:danang_nearest&viewparams=x:'
+            +coordinate[0]+';y:'+coordinate[1]+';&outputformat=application/json',
+            context: document.body
+        }).done(function (data) {
+            if (data && data.features && data.features[0].properties && data.features[0].properties.id) {
+                if (isFirst) {
+                    nodeBegin = data.features[0].properties.id;
+                } else {
+                    nodeEnd = data.features[0].properties.id;
+                }
+                console.log(`nodeBegin: ${nodeBegin}, nodeEnd: ${nodeEnd}`);
+            }
+        });
+    };
+
+    var getNodeSensor = (coordinate, isFirst) => {
         $.ajax({
             url: 'http://localhost:8080/geoserver/wfs?SERVICE=WFS&version=1.0.0&REQUEST=GetFeature&typeName=mapVN:danang_nearest&viewparams=x:'
             +coordinate[0]+';y:'+coordinate[1]+';&outputformat=application/json',
@@ -228,7 +309,42 @@ $('#document').ready(function () {
             } else{
                 alert('Error');
             }
+        }).fail(function() {
+            alert(serviceFail);
         });
+    }
+
+    var setButtonRegister = (isLoading, isShow) => {
+        if (isLoading) {
+            $('#btnRegister').html(textLoading);
+            $('#dashboard').prop('disabled', true);
+        } else {
+            $('#btnRegister').html(textRegister);
+            $('#btnRegister').prop('disabled', isShow);
+            $('#dashboard').prop('disabled', false);
+        }
+    }
+
+    var registerLocation = (email) => {
+        let formData = {
+            'id': currentSensorSelect.features[0].id,
+            'email': email
+        };
+
+        $.ajax({
+            type: 'post',
+            url: urlRegister,   
+            data: formData,
+            success: function (data) {
+                if (data.status !== 200) {
+                    alert('Đăng ký lỗi: ' + data.message);
+                    console.log(data.message)
+                }
+            },  
+            error: function () {
+                console.log('We are sorry but our servers are having an issue right now');
+            }
+        })
     }
 
     hideSearch = () => {
@@ -247,6 +363,21 @@ $('#document').ready(function () {
 
         hideSearch();
     }
+
+    hideAllMap(listMapOptions);
+
+    listMapOptions[4].setVisible(true);
+
+    function openForm() {
+        document.getElementById("dashboard-popup-id").style.display = "block";
+        document.getElementById('dashboard-div').innerHTML =
+            '<iframe seamless id="iframe-dashboard" src="http://localhost:3000/dashboard/view/' +
+            currentSensorSelect.features[0].id + '"></iframe>';
+    }
+
+    function closeForm() {
+        document.getElementById("dashboard-popup-id").style.display = "none";
+    }
 });
 
 hideAllMap = (listMap) => {
@@ -254,4 +385,3 @@ hideAllMap = (listMap) => {
         listMap[i].setVisible(false);
     }
 }
-

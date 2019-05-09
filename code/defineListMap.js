@@ -1,5 +1,12 @@
 var format = 'image/png';
 const url = 'http://localhost:8080/geoserver/mapVN/wms';
+const urlRegister = 'http://localhost:3000/register';
+const serviceFail = 'Dịch vụ nào đó không hoạt động';
+var textRegister = 'Đăng ký nhận thông tin';
+var textLoading = 'Đang kiểm tra...';
+var emailRegex = new RegExp('^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$');
+
+
 
 var VietNamMap = new ol.layer.Tile({
     source: new ol.source.TileWMS({
@@ -56,6 +63,13 @@ const listMapProps = [
         name: 'mapPoints',
         config: {
             'LAYERS': 'mapVN:da_nang_point',
+            'tilesOrigin': 103.134300231934 + "," + 8.5313606262207
+        }
+    },
+    {
+        name: 'mapSensor',
+        config: {
+            'LAYERS': 'mapVN:da_nang_point_sensor',
             'tilesOrigin': 103.134300231934 + "," + 8.5313606262207
         }
     }
