@@ -1,0 +1,15 @@
+<layer>
+  <name>da_nang_point_sensor</name>
+  <id>LayerInfoImpl-f2b3967:16a454d770a:-7f12</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--1ab91069:16a47b77c2a:-7ffe</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-f2b3967:16a454d770a:-7f13</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

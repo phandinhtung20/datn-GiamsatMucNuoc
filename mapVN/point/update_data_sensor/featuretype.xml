@@ -1,0 +1,62 @@
+<featureType>
+  <id>FeatureTypeInfoImpl--6fdf5b78:16a78eff74a:-7ffe</id>
+  <name>update_data_sensor</name>
+  <nativeName>update_data_sensor</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl--2705e735:168cd98c9c2:-7ffe</id>
+  </namespace>
+  <title>update_data_sensor</title>
+  <keywords>
+    <string>features</string>
+    <string>update_data_sensor</string>
+  </keywords>
+  <srs>EPSG:4326</srs>
+  <nativeBoundingBox>
+    <minx>-180.0</minx>
+    <maxx>180.0</maxx>
+    <miny>-90.0</miny>
+    <maxy>90.0</maxy>
+    <crs>EPSG:4326</crs>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-180.0</minx>
+    <maxx>180.0</maxx>
+    <miny>-90.0</miny>
+    <maxy>90.0</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="JDBC_VIRTUAL_TABLE">
+      <virtualTable>
+        <name>update_data_sensor</name>
+        <sql>select * from pgr_update_water_level( %id%, %level%)
+</sql>
+        <escapeSql>false</escapeSql>
+        <keyColumn>id</keyColumn>
+        <parameter>
+          <name>level</name>
+          <defaultValue>0</defaultValue>
+          <regexpValidator>^-?[\d.]+$</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>id</name>
+          <defaultValue>1</defaultValue>
+          <regexpValidator>^-?[\d.]+$</regexpValidator>
+        </parameter>
+      </virtualTable>
+    </entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-13e93dab:169065fefb8:-7fff</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

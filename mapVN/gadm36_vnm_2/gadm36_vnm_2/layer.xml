@@ -1,0 +1,15 @@
+<layer>
+  <name>gadm36_vnm_2</name>
+  <id>LayerInfoImpl--638b705c:169011d0a88:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-82a1173:1692f237f1f:-7fff</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--638b705c:169011d0a88:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

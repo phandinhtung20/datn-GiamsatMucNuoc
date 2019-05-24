@@ -1,0 +1,15 @@
+<layer>
+  <name>da_nang_river</name>
+  <id>LayerInfoImpl-f2b3967:16a454d770a:-7ffe</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-f2b3967:16a454d770a:-7ffb</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-f2b3967:16a454d770a:-7fff</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

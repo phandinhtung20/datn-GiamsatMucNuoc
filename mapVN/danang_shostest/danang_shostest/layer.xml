@@ -1,0 +1,15 @@
+<layer>
+  <name>danang_shostest</name>
+  <id>LayerInfoImpl-5ddf90ed:1694166e294:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-5ddf90ed:1694166e294:-7e80</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-5ddf90ed:1694166e294:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

@@ -1,0 +1,73 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-5ddf90ed:1694166e294:-7ffb</id>
+  <name>danang_shostest</name>
+  <nativeName>danang_shostest</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl--2705e735:168cd98c9c2:-7ffe</id>
+  </namespace>
+  <title>danang_shostest</title>
+  <keywords>
+    <string>features</string>
+    <string>danang_shostest</string>
+  </keywords>
+  <srs>EPSG:404000</srs>
+  <nativeBoundingBox>
+    <minx>108.1492264</minx>
+    <maxx>108.1544779</maxx>
+    <miny>16.067781</miny>
+    <maxy>16.0742872</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>108.1492264</minx>
+    <maxx>108.1544779</maxx>
+    <miny>16.067781</miny>
+    <maxy>16.0742872</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="JDBC_VIRTUAL_TABLE">
+      <virtualTable>
+        <name>danang_shostest</name>
+        <sql>select seq, id, the_geom, name, now&#xd;
+from (&#xd;
+    select seq, lag(node) over (order by seq) as bef,&#xd;
+           node as now&#xd;
+    from pgr_dijkstra(&apos;select id_0 as id, source, target, st_length(the_geom) as cost, (CASE WHEN directed THEN -1 ELSE st_length(the_geom) END) as reverse_cost from da_nang_exploded&apos;,%a%,%b%,true) as di&#xd;
+) t&#xd;
+JOIN public.da_nang_exploded e&#xd;
+ON ((now = e.source and bef = e.target) or (bef = e.source and now = e.target) or (now  = e.source and now = e.target))
+</sql>
+        <escapeSql>false</escapeSql>
+        <geometry>
+          <name>the_geom</name>
+          <type>MultiLineString</type>
+          <srid>-1</srid>
+        </geometry>
+        <parameter>
+          <name>a</name>
+          <defaultValue>1</defaultValue>
+          <regexpValidator>^[\d\.\+-eE]+$</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>b</name>
+          <defaultValue>291</defaultValue>
+          <regexpValidator>^[\d\.\+-eE]+$</regexpValidator>
+        </parameter>
+      </virtualTable>
+    </entry>
+    <entry key="cachingEnabled">false</entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-5ddf90ed:1694166e294:-7ffc</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

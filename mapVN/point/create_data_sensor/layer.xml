@@ -1,0 +1,12 @@
+<layer>
+  <name>create_data_sensor</name>
+  <id>LayerInfoImpl-5d95a7c4:16aa552bafa:-7ffe</id>
+  <type>VECTOR</type>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-5d95a7c4:16aa552bafa:-7fff</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

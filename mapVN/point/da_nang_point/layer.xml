@@ -1,0 +1,15 @@
+<layer>
+  <name>da_nang_point</name>
+  <id>LayerInfoImpl-78da8f51:169fd818d0d:-7a88</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-78da8f51:169fd818d0d:-7a87</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-78da8f51:169fd818d0d:-7a89</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

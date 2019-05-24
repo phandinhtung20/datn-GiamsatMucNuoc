@@ -1,0 +1,87 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-5d95a7c4:16aa552bafa:-7ffa</id>
+  <name>create_data_sensor_source</name>
+  <nativeName>create_data_sensor_source</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl--2705e735:168cd98c9c2:-7ffe</id>
+  </namespace>
+  <title>create_data_sensor_source</title>
+  <keywords>
+    <string>features</string>
+    <string>create_data_sensor_source</string>
+  </keywords>
+  <srs>EPSG:404000</srs>
+  <nativeBoundingBox>
+    <minx>-1.0</minx>
+    <maxx>0.0</maxx>
+    <miny>-1.0</miny>
+    <maxy>0.0</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-1.0</minx>
+    <maxx>0.0</maxx>
+    <miny>-1.0</miny>
+    <maxy>0.0</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="JDBC_VIRTUAL_TABLE">
+      <virtualTable>
+        <name>create_data_sensor_source</name>
+        <sql>select * from pgr_create_sensor(%_name%, %_address%,&#xd;
+%_max_level%, %_type%, %_lng%, %_lat%, %_trafic%)
+</sql>
+        <escapeSql>false</escapeSql>
+        <keyColumn>id</keyColumn>
+        <parameter>
+          <name>_address</name>
+          <defaultValue>&apos;&apos;</defaultValue>
+          <regexpValidator>^&apos;[\w\d\sÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ,]+&apos;$</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>_name</name>
+          <defaultValue>&apos;&apos;</defaultValue>
+          <regexpValidator>^&apos;[\w\d\sÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ,]+&apos;$</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>_type</name>
+          <defaultValue>0</defaultValue>
+          <regexpValidator>^-?[\d.]+$</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>_max_level</name>
+          <defaultValue>0</defaultValue>
+          <regexpValidator>^-?[\d.]+$</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>_lng</name>
+          <defaultValue>0</defaultValue>
+          <regexpValidator>^-?[\d.]+$</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>_trafic</name>
+          <defaultValue>0</defaultValue>
+          <regexpValidator>^-?[\d.]+$</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>_lat</name>
+          <defaultValue>0</defaultValue>
+          <regexpValidator>^-?[\d.]+$</regexpValidator>
+        </parameter>
+      </virtualTable>
+    </entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-13e93dab:169065fefb8:-7fff</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

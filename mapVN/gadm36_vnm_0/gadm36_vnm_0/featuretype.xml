@@ -1,0 +1,43 @@
+<featureType>
+  <id>FeatureTypeInfoImpl--2705e735:168cd98c9c2:-7ffc</id>
+  <name>gadm36_vnm_0</name>
+  <nativeName>gadm36_vnm_0</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl--2705e735:168cd98c9c2:-7ffe</id>
+  </namespace>
+  <title>gadm36_vnm_0</title>
+  <keywords>
+    <string>features</string>
+    <string>gadm36_vnm_0</string>
+  </keywords>
+  <srs>EPSG:404000</srs>
+  <nativeBoundingBox>
+    <minx>102.144584655762</minx>
+    <maxx>109.469177246094</maxx>
+    <miny>8.38135528564453</miny>
+    <maxy>23.3926944732666</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>102.144584655762</minx>
+    <maxx>109.469177246094</maxx>
+    <miny>8.38135528564453</miny>
+    <maxy>23.3926944732666</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="cachingEnabled">false</entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl--2705e735:168cd98c9c2:-7ffd</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

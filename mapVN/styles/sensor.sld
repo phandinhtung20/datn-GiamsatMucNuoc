@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0"
+                       xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"
+                       xmlns="http://www.opengis.net/sld"
+                       xmlns:ogc="http://www.opengis.net/ogc"
+                       xmlns:xlink="http://www.w3.org/1999/xlink"
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NamedLayer>
+    <Name>default_polygon</Name>
+    <UserStyle>
+      <Title>Default Polygon</Title>
+      <Abstract>A sample style that draws a polygon</Abstract>
+      <FeatureTypeStyle>
+<!-- name -->
+        <Rule>
+          <Name>name</Name>
+          <TextSymbolizer>
+            <Label>
+              <ogc:PropertyName>name</ogc:PropertyName>
+            </Label>
+            <Font>
+              <CssParameter name="font-family">Arial</CssParameter>
+              <CssParameter name="font-size">13</CssParameter>
+              <CssParameter name="font-style">normal</CssParameter>
+            </Font>
+            <LabelPlacement>
+              <PointPlacement>
+                <AnchorPoint>
+                  <AnchorPointX>0.5</AnchorPointX>
+                  <AnchorPointY>0.0</AnchorPointY>
+                </AnchorPoint>
+                <Displacement>
+                  <DisplacementX>0</DisplacementX>
+                  <DisplacementY>5</DisplacementY>
+                </Displacement>
+              </PointPlacement>
+            </LabelPlacement>
+            <Fill>
+              <CssParameter name="fill">#000000</CssParameter>
+            </Fill>
+          </TextSymbolizer>
+        </Rule>
+<!-- start of zoom maximun scale -->
+        <Rule>
+          <Name>all</Name>
+          <Title>All item</Title>
+          <MinScaleDenominator>10000</MinScaleDenominator>
+          <MaxScaleDenominator>1000000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF0000</CssParameter>
+                </Fill>
+                <Stroke>
+                  <CssParameter name="stroke">#000000</CssParameter>
+                  <CssParameter name="stroke-width">2</CssParameter>
+                </Stroke>
+              </Mark>
+              <Size>6</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+<!-- start of zoom level 9 -->
+        <Rule>
+          <Name>9</Name>
+          <Title>div 9</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:Function name="floor">
+                <ogc:Mul>
+                  <ogc:Div>
+                    <ogc:PropertyName>level_water</ogc:PropertyName>
+                    <ogc:PropertyName>max_level</ogc:PropertyName>
+                  </ogc:Div>
+                  <ogc:Literal>10</ogc:Literal>
+                </ogc:Mul>
+              </ogc:Function>
+              <ogc:Literal>9</ogc:Literal>
+            </ogc:PropertyIsGreaterThanOrEqualTo>
+          </ogc:Filter>
+          <MaxScaleDenominator>10000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF9090</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>120</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+<!-- start of zoom level 8 -->
+        <Rule>
+          <Name>8</Name>
+          <Title>div 8</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:Function name="floor">
+                <ogc:Mul>
+                  <ogc:Div>
+                    <ogc:PropertyName>level_water</ogc:PropertyName>
+                    <ogc:PropertyName>max_level</ogc:PropertyName>
+                  </ogc:Div>
+                  <ogc:Literal>10</ogc:Literal>
+                </ogc:Mul>
+              </ogc:Function>
+              <ogc:Literal>8</ogc:Literal>
+            </ogc:PropertyIsGreaterThanOrEqualTo>
+          </ogc:Filter>
+          <MaxScaleDenominator>10000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF8080</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>108</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+<!-- start of zoom level 7 -->
+        <Rule>
+          <Name>7</Name>
+          <Title>div 7</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:Function name="floor">
+                <ogc:Mul>
+                  <ogc:Div>
+                    <ogc:PropertyName>level_water</ogc:PropertyName>
+                    <ogc:PropertyName>max_level</ogc:PropertyName>
+                  </ogc:Div>
+                  <ogc:Literal>10</ogc:Literal>
+                </ogc:Mul>
+              </ogc:Function>
+              <ogc:Literal>7</ogc:Literal>
+            </ogc:PropertyIsGreaterThanOrEqualTo>
+          </ogc:Filter>
+          <MaxScaleDenominator>10000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF7070</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>96</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+<!-- start of zoom level 6 -->
+        <Rule>
+          <Name>6</Name>
+          <Title>div 6</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:Function name="floor">
+                <ogc:Mul>
+                  <ogc:Div>
+                    <ogc:PropertyName>level_water</ogc:PropertyName>
+                    <ogc:PropertyName>max_level</ogc:PropertyName>
+                  </ogc:Div>
+                  <ogc:Literal>10</ogc:Literal>
+                </ogc:Mul>
+              </ogc:Function>
+              <ogc:Literal>6</ogc:Literal>
+            </ogc:PropertyIsGreaterThanOrEqualTo>
+          </ogc:Filter>
+          <MaxScaleDenominator>10000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF6060</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>84</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+<!-- start of zoom level 5 -->
+        <Rule>
+          <Name>5</Name>
+          <Title>div 5</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:Function name="floor">
+                <ogc:Mul>
+                  <ogc:Div>
+                    <ogc:PropertyName>level_water</ogc:PropertyName>
+                    <ogc:PropertyName>max_level</ogc:PropertyName>
+                  </ogc:Div>
+                  <ogc:Literal>10</ogc:Literal>
+                </ogc:Mul>
+              </ogc:Function>
+              <ogc:Literal>5</ogc:Literal>
+            </ogc:PropertyIsGreaterThanOrEqualTo>
+          </ogc:Filter>
+          <MaxScaleDenominator>10000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF5050</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>72</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+<!-- start of zoom level 4 -->
+        <Rule>
+          <Name>4</Name>
+          <Title>div 4</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:Function name="floor">
+                <ogc:Mul>
+                  <ogc:Div>
+                    <ogc:PropertyName>level_water</ogc:PropertyName>
+                    <ogc:PropertyName>max_level</ogc:PropertyName>
+                  </ogc:Div>
+                  <ogc:Literal>10</ogc:Literal>
+                </ogc:Mul>
+              </ogc:Function>
+              <ogc:Literal>4</ogc:Literal>
+            </ogc:PropertyIsGreaterThanOrEqualTo>
+          </ogc:Filter>
+          <MaxScaleDenominator>10000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF4040</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>60</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+<!-- start of zoom level 3 -->
+        <Rule>
+          <Name>3</Name>
+          <Title>div 3</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:Function name="floor">
+                <ogc:Mul>
+                  <ogc:Div>
+                    <ogc:PropertyName>level_water</ogc:PropertyName>
+                    <ogc:PropertyName>max_level</ogc:PropertyName>
+                  </ogc:Div>
+                  <ogc:Literal>10</ogc:Literal>
+                </ogc:Mul>
+              </ogc:Function>
+              <ogc:Literal>3</ogc:Literal>
+            </ogc:PropertyIsGreaterThanOrEqualTo>
+          </ogc:Filter>
+          <MaxScaleDenominator>10000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF3030</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>48</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+<!-- start of zoom level 2 -->
+        <Rule>
+          <Name>2</Name>
+          <Title>div 2</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:Function name="floor">
+                <ogc:Mul>
+                  <ogc:Div>
+                    <ogc:PropertyName>level_water</ogc:PropertyName>
+                    <ogc:PropertyName>max_level</ogc:PropertyName>
+                  </ogc:Div>
+                  <ogc:Literal>10</ogc:Literal>
+                </ogc:Mul>
+              </ogc:Function>
+              <ogc:Literal>2</ogc:Literal>
+            </ogc:PropertyIsGreaterThanOrEqualTo>
+          </ogc:Filter>
+          <MaxScaleDenominator>10000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF2020</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>36</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+<!-- start of zoom level 1 -->
+        <Rule>
+          <Name>1</Name>
+          <Title>div 1</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:Function name="floor">
+                <ogc:Mul>
+                  <ogc:Div>
+                    <ogc:PropertyName>level_water</ogc:PropertyName>
+                    <ogc:PropertyName>max_level</ogc:PropertyName>
+                  </ogc:Div>
+                  <ogc:Literal>10</ogc:Literal>
+                </ogc:Mul>
+              </ogc:Function>
+              <ogc:Literal>1</ogc:Literal>
+            </ogc:PropertyIsGreaterThanOrEqualTo>
+          </ogc:Filter>
+          <MaxScaleDenominator>10000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF1010</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>24</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+<!-- start of zoom level 0 -->
+        <Rule>
+          <Name>0</Name>
+          <Title>div 0</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:Function name="floor">
+                <ogc:Mul>
+                  <ogc:Div>
+                    <ogc:PropertyName>level_water</ogc:PropertyName>
+                    <ogc:PropertyName>max_level</ogc:PropertyName>
+                  </ogc:Div>
+                  <ogc:Literal>10</ogc:Literal>
+                </ogc:Mul>
+              </ogc:Function>
+              <ogc:Literal>0.0</ogc:Literal>
+            </ogc:PropertyIsGreaterThanOrEqualTo>
+          </ogc:Filter>
+          <MaxScaleDenominator>10000</MaxScaleDenominator>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF0000</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>12</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
