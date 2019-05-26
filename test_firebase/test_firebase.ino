@@ -8,8 +8,8 @@
 //#define WIFI_SSID "xnxx"
 //#define WIFI_PASSWORD "tung.tung"
 
-#define TRIG_PIN 2
-#define ECHO_PIN 0
+#define TRIG_PIN 12
+#define ECHO_PIN 14
 
 #define EQUIP_ID "5ccb0a9be998112d4c017902"
 
@@ -134,12 +134,22 @@ void setupAP() {
 }
 
 void setupFirebase() {
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(500);
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(200);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(500);
+  digitalWrite(LED_BUILTIN, HIGH);
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
   Firebase.reconnectWiFi(true);
 }
 
 void setup() {
-//  pinMode(BUILTIN_LED, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000);
+  digitalWrite(LED_BUILTIN, HIGH);
   Serial.begin(115200);
 
   if (!connectWifi()){
