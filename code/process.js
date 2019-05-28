@@ -170,6 +170,17 @@ $('#document').ready(function () {
             context: document.body
         }).done(function (data) {
             console.log(JSON.stringify(data))
+
+            if (data && data.features && data.features.length > 0) {
+                var total = 0;
+                for (var i = data.features.length - 1; i >= 0; i--) {
+                    total += data.features[i].properties.cost;
+                }
+                console.log(total)
+                alert('Xong, tổng quãng đường: ' + total*100000 + 'm');
+            } else {
+                alert('Tìm đường thất bại');
+            }
         });
 
         var params = {
